@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  @apply font-body;
+  background-color: #FFFFFF;
+  color: #111111;
+}
+
+html.dark body {
+  background-color: #111111;
+  color: #F5F5F5;
+}
+
+::selection {
+  background-color: #800000;
+  color: #FFFFFF;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #800000;
+  border-radius: 8px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 shadow-glass dark:shadow-glass-dark rounded-2xl;
+  }
+
+  .btn-maroon {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-heading font-semibold text-white
+    bg-maroon-gradient bg-[length:160%_160%] bg-left hover:bg-right
+    shadow-maroon transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg
+    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-maroon;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-heading font-semibold
+    border-2 border-maroon text-maroon dark:text-cloud dark:border-cloud
+    hover:bg-maroon hover:text-white dark:hover:bg-cloud dark:hover:text-ink transition-all duration-300
+    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-maroon;
+  }
+
+  .section-eyebrow {
+    @apply text-maroon dark:text-maroon-300 font-heading font-semibold tracking-[0.2em] text-xs uppercase;
+  }
+
+  .section-heading {
+    @apply font-heading font-bold text-3xl sm:text-4xl text-ink dark:text-white mt-2;
+  }
+
+  .tilt-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    transform-style: preserve-3d;
+  }
+  .tilt-card:hover {
+    transform: perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-6px);
+  }
+}
