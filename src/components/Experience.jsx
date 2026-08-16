@@ -17,7 +17,7 @@ export default function Experience() {
           <h2 className="section-heading">Experience</h2>
         </motion.div>
 
-        <div className="mt-14 space-y-6">
+        {/* <div className="mt-14 space-y-6">
           {experience.map((exp, i) => (
             <motion.div
               key={exp.role}
@@ -44,7 +44,7 @@ export default function Experience() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
 
         <div className="mt-14 space-y-6">

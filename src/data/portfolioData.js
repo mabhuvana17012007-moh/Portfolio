@@ -67,7 +67,7 @@ export const projects = [
     tech: ['React', 'Firebase', 'Machine Learning', 'NodeMCU', 'IoT'],
     image:
       'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&q=80',
-    github: 'https://github.com/',
+    github: 'https://github.com/mabhuvana17012007-moh/smart_waste_management_system.git',
     demo: 'https://example.com/',
     category: 'IoT',
   },
@@ -91,7 +91,7 @@ export const projects = [
     tech: ['BeautifulSoup', 'Python', 'Requests', 'SMTP'],
     image:
       'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=800&q=80',
-    github: 'https://github.com/',
+    github: 'https://github.com/mabhuvana17012007-moh/price_tracking.git',
     demo: 'https://example.com/',
     category: 'Automation',
   },
@@ -171,5 +171,5 @@ export const achievements = [
   { label: 'Projects Completed', value: 3 },
   { label: 'Programming Languages', value: 4 },
   { label: 'Certificates Earned', value: 3 },
-  { label: 'Internships Completed', value: 1 },
+  { label: 'Internships Completed', value: 2 },
 ]
