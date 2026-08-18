@@ -79,7 +79,7 @@ export const projects = [
     tech: ['HTML', 'CSS', 'JavaScript', 'Weather API'],
     image:
       'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80',
-    github: 'https://github.com/',
+    github: 'https://github.com/mabhuvana17012007-moh/WeatherApp.git',
     demo: 'https://example.com/',
     category: 'Web',
   },
