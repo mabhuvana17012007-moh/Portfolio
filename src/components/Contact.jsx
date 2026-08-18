@@ -16,14 +16,42 @@ export default function Contact() {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // NOTE: Wire this up to your backend, Formspree, EmailJS, etc.
-    setSubmitted(true)
-    setForm({ name: '', email: '', subject: '', message: '' })
-    setTimeout(() => setSubmitted(false), 4500)
-  }
+  const handleSubmit = async (e) => {
+  e.preventDefault()
 
+  try {
+    const response = await fetch('http://localhost:8080/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      }),
+    })
+
+    if (!response.ok) {
+      throw new Error('Failed to send message')
+    }
+
+    setSubmitted(true)
+
+    setForm({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    })
+
+    setTimeout(() => setSubmitted(false), 4500)
+
+  } catch (error) {
+    console.error('Error:', error)
+    alert('Unable to send message. Please try again.')
+  }
+}
   return (
     <section id="contact" className="bg-cloud/60 py-24 dark:bg-white/[0.03]">
       <div className="mx-auto max-w-6xl px-6">
